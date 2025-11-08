@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collections - Tubelight Jewellery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #b76e79;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section.collections {
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    section.collections::before {
+      content: "";
+      background-image: url("https://static.vecteezy.com/system/resources/previews/027/990/875/non_2x/royal-frame-logo-generative-ai-free-png.png");
+      background-size: 600px;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.08;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    section.collections h2 {
+      font-size: 2em;
+      color: #b76e79;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .collection-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .collection-card {
+      background-color: #fdf0f2;
+      border: 2px solid #b76e79;
+      border-radius: 14px;
+      width: 220px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .collection-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .collection-card h3 {
+      font-size: 1.2em;
+      color: #b76e79;
+      margin-bottom: 10px;
+    }
+
+    .collection-card p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .collection-card button {
+      padding: 10px 20px;
+      background-color: #b76e79;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .collection-card button:hover {
+      background-color: #a45d69;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/027/990/875/non_2x/royal-frame-logo-generative-ai-free-png.png" alt="Tubelight Logo" />
+      <span>Tubelight</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="orders.html">Order</a>
+    </nav>
+  </header>
+
+  <section class="collections">
+    <h2>Our Exclusive Collections</h2>
+    <div class="collection-row">
+      <!-- Example collection items -->
+      <div class="collection-card">
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-d-render-of-a-stunning-diamond-ring-on-a-vibrant-emerald-image_3792981.jpg" />
+        <h3>Diamond Ring</h3>
+        <p>Price: ₹49,999</p>
+        <button onclick="addToCart('Gold Ring', 'https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-d-render-of-a-stunning-diamond-ring-on-a-vibrant-emerald-image_3792981.jpg', '₹49999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://m.media-amazon.com/images/I/71p-aAQmY9L._AC_UY1100_.jpg" />
+        <h3>Diamond ear rings</h3>
+        <p>Price: ₹50,000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://m.media-amazon.com/images/I/71p-aAQmY9L._AC_UY1100_.jpg', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://m.media-amazon.com/images/I/81Uk2oyqZnL._AC_UY1100_.jpg" />
+        <h3>Necklace</h3>
+        <p>Price: ₹99,999</p>
+        <button onclick="addToCart('Platinum Ring', 'https://m.media-amazon.com/images/I/81Uk2oyqZnL._AC_UY1100_.jpg', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://images.stockcake.com/public/5/0/0/500a8291-4dac-45e5-9bba-468ca7174286_large/elegant-diamond-pendant-stockcake.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹100000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://images.stockcake.com/public/5/0/0/500a8291-4dac-45e5-9bba-468ca7174286_large/elegant-diamond-pendant-stockcake.jpg', '₹50000')">Buy Now</button>
+      </div><br>
+      <div class="collection-card">
+        <img src="https://images.picxy.com/cache/2021/6/4/e5ef7916f37b4e633f97eaeca4b143fb.jpg" />
+        <h3>Gold Ring</h3>
+        <p>Price: ₹2999</p>
+        <button onclick="addToCart('Gold Ring', 'https://images.picxy.com/cache/2021/6/4/e5ef7916f37b4e633f97eaeca4b143fb.jpg', '₹2999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://img.tatacliq.com/images/i21//437Wx649H/MP000000024628790_437Wx649H_202412060246181.jpeg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://img.tatacliq.com/images/i21//437Wx649H/MP000000024628790_437Wx649H_202412060246181.jpeg', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/2/388219598/TO/HO/BT/9065787/bg-2481-latest-classy-gold-plated-rajwadi-moti-work-handmade-bracelet-for-women-girls.jpg" />
+        <h3>Platinum Ring</h3>
+        <p>Price: ₹25000</p>
+        <button onclick="addToCart('Platinum Ring', 'https://5.imimg.com/data5/SELLER/Default/2024/2/388219598/TO/HO/BT/9065787/bg-2481-latest-classy-gold-plated-rajwadi-moti-work-handmade-bracelet-for-women-girls.jpg', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240604/uRep/665e6dd205ac7d77bb9a3c92/-473Wx593H-700039050-gold-MODEL.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://assets.ajio.com/medias/sys_master/root/20240604/uRep/665e6dd205ac7d77bb9a3c92/-473Wx593H-700039050-gold-MODEL.jpg', '₹50000')">Buy Now</button>
+      </div><br><div class="collection-card">
+        <img src="https://i.pinimg.com/564x/cf/21/a3/cf21a3f75d54858f4c504b77b1f65c0f.jpg" />
+        <h3>Gold Ring</h3>
+        <p>Price: ₹2999</p>
+        <button onclick="addToCart('Gold Ring', 'https://i.pinimg.com/564x/cf/21/a3/cf21a3f75d54858f4c504b77b1f65c0f.jpg', '₹2999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://psjewellery.in/cdn/shop/products/1-KeU7bAi_TDF2UQ9Exp_DGoMbfwq7Z_4.jpg?v=1708677558" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://psjewellery.in/cdn/shop/products/1-KeU7bAi_TDF2UQ9Exp_DGoMbfwq7Z_4.jpg?v=1708677558', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXUNT03Ea0OBeuKGFaBuTCVCGMoxBx_ySl1Q&s" />
+        <h3>Platinum Ring</h3>
+        <p>Price: ₹25000</p>
+        <button onclick="addToCart('Platinum Ring', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXUNT03Ea0OBeuKGFaBuTCVCGMoxBx_ySl1Q&s', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://silverlinings.in/cdn/shop/products/SilverBraceletsBG142_2.jpg?v=1601211860" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://silverlinings.in/cdn/shop/products/SilverBraceletsBG142_2.jpg?v=1601211860', '₹50000')">Buy Now</button>
+      </div><br><div class="collection-card">
+        <img src="https://www.caratlane.com/blog/wp-content/uploads/2025/04/small-gold-earrings-for-women.jpg" />
+        <h3>Gold Ring</h3>
+        <p>Price: ₹2999</p>
+        <button onclick="addToCart('Gold Ring', 'https://www.caratlane.com/blog/wp-content/uploads/2025/04/small-gold-earrings-for-women.jpg', '₹2999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://i.pinimg.com/736x/67/50/39/6750392f88b7df555f2e397607d00350.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://i.pinimg.com/736x/67/50/39/6750392f88b7df555f2e397607d00350.jpg', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/23281380/2023/5/20/801073f3-994a-4d1e-84a5-5b06f78471861684557831894VighnahartaGold-TonedFloralHoopEarrings1.jpg" />
+        <h3>Platinum Ring</h3>
+        <p>Price: ₹25000</p>
+        <button onclick="addToCart('Platinum Ring', 'https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/23281380/2023/5/20/801073f3-994a-4d1e-84a5-5b06f78471861684557831894VighnahartaGold-TonedFloralHoopEarrings1.jpg', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/25953744/2023/11/20/77d8e05c-f8fc-4778-a8bf-d60201e0cfe01700488033518GIVAWomenSilver-TonedSterlingSilverCubicZirconiaRhodium-Plat1.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/25953744/2023/11/20/77d8e05c-f8fc-4778-a8bf-d60201e0cfe01700488033518GIVAWomenSilver-TonedSterlingSilverCubicZirconiaRhodium-Plat1.jpg', '₹50000')">Buy Now</button>
+      </div><br>
+      <div class="collection-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXBBu2QzKatc4aDhUI_ZNm5JhlwlEZ5zXA_A&s" />
+        <h3>Gold Ring</h3>
+        <p>Price: ₹2999</p>
+        <button onclick="addToCart('Gold Ring', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXBBu2QzKatc4aDhUI_ZNm5JhlwlEZ5zXA_A&s', '₹2999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://www.onlinepng.com/cdn/shop/files/CH-928725-1.jpg?v=1719396928" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://www.onlinepng.com/cdn/shop/files/CH-928725-1.jpg?v=1719396928', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://psjewellery.in/cdn/shop/products/1E9xTJygmSeebMCe7iMJHMIT92vZhY9-7.jpg?v=1708677553" />
+        <h3>Platinum Ring</h3>
+        <p>Price: ₹25000</p>
+        <button onclick="addToCart('Platinum Ring', 'https://psjewellery.in/cdn/shop/products/1E9xTJygmSeebMCe7iMJHMIT92vZhY9-7.jpg?v=1708677553', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://5.imimg.com/data5/XX/JM/LL/SELLER-9065787/er-2825-1-500x500.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://5.imimg.com/data5/XX/JM/LL/SELLER-9065787/er-2825-1-500x500.jpg', '₹50000')">Buy Now</button>
+      </div><br>
+      <div class="collection-card">
+        <img src="https://goldplatedmrjewellers.com/wp-content/uploads/2024/10/Shankha.18.jpg" />
+        <h3>Gold Ring</h3>
+        <p>Price: ₹2999</p>
+        <button onclick="addToCart('Gold Ring', 'https://goldplatedmrjewellers.com/wp-content/uploads/2024/10/Shankha.18.jpg', '₹2999')">Buy Now</button>
+      </div>
+      <!-- Repeat similar blocks for other collections -->
+      <div class="collection-card">
+        <img src="https://sukkhi.com/cdn/shop/products/SKR108898_2000x.jpg?v=1661429047" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://sukkhi.com/cdn/shop/products/SKR108898_2000x.jpg?v=1661429047', '₹50000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://imagescdn.jaypore.com/img/app/product/3/39732038-15277727.jpg?w=500&auto=format" />
+        <h3>Platinum Ring</h3>
+        <p>Price: ₹25000</p>
+        <button onclick="addToCart('Platinum Ring', 'https://imagescdn.jaypore.com/img/app/product/3/39732038-15277727.jpg?w=500&auto=format', '₹25000')">Buy Now</button>
+      </div>
+      <div class="collection-card">
+        <img src="https://ae01.alicdn.com/kf/Hbdfd4f547c524ce5aa780554df323701G.jpg_640x640q90.jpg" />
+        <h3>Diamond Necklace</h3>
+        <p>Price: ₹50000</p>
+        <button onclick="addToCart('Diamond Necklace', 'https://ae01.alicdn.com/kf/Hbdfd4f547c524ce5aa780554df323701G.jpg_640x640q90.jpg', '₹50000')">Buy Now</button>
+      </div><br>
+    </div>
+  </section>
+
+  <script>
+    function addToCart(name, image, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, image, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "orders.html"; 
+    }
+  </script>
+
+</body>
+</html>

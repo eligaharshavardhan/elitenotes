@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tubelight - Women's Jewelry</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/027/990/875/non_2x/royal-frame-logo-generative-ai-free-png.png" alt="Tubelight Logo" />
+      <span>Tubelight</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="orders.html">Order</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>
+      <img src="https://static.vecteezy.com/system/resources/previews/027/990/875/non_2x/royal-frame-logo-generative-ai-free-png.png" alt="Logo" class="hero-logo" />
+      <b>Tubelight Jewellery</b>
+    </h1>
+    <p class="hero-subtitle">Timeless luxury. Crafted elegance.</p>
+  </section>
+
+  <section class="curations">
+    <h2>Curated Collections</h2>
+    <nav>
+    <a href="collections.html">
+      <div class="items">
+        <div class="item"><img src="https://images-static.nykaa.com/media/catalog/product/0/9/0908d35DGIVAX00000633_1.jpg" alt="Earrings"><p>Earrings</p></div>
+        <div class="item"><img src="https://www.giva.co/cdn/shop/articles/1_407_-min.jpg" alt="Necklaces"><p>Necklaces</p></div>
+        <div class="item"><img src="https://rebaari.com/cdn/shop/files/DSC_4766_800x.jpg" alt="Rings"><p>Rings</p></div>
+        <div class="item"><img src="https://rebaari.com/cdn/shop/products/DSC_3721_800x.jpg" alt="Bangles"><p>Bangles</p></div>
+      </div>
+    </a>
+    </nav>
+  </section>
+
+  <section class="recommended">
+    <div class="product main">
+      <img src="https://rubans.in/cdn/shop/products/rubans-rose-gold-plated-zirconia-stone-studded-necklace-set-necklace-set-31202746073262_1800x1800.jpg" alt="Featured">
+      <div>
+        <h3>Recommended:</h3>
+        <h2><b>Gold Necklace</b></h2>
+        <p>Delicate design with a modern twist, perfect for every occasion.</p>
+        <span><b>₹1,39,999</b></span><br>
+        <button onclick="addToCart('Gold Necklace', '₹1,39,999', 'https://rubans.in/cdn/shop/products/rubans-rose-gold-plated-zirconia-stone-studded-necklace-set-necklace-set-31202746073262_1800x1800.jpg')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="recommend-row">
+      <div class="product small">
+        <img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/pendant-locket/y/t/b/na-d-52-1-pyr-fashion-original-imahyyzmphhswkhv.jpeg?q=90" alt="Pendant">
+        <div>
+          <h3>Gold Pendant</h3>
+          <p>Minimalist charm for everyday elegance.</p>
+          <span><b>₹78,799</b></span><br>
+          <button onclick="addToCart('Gold Pendant', '₹78,799', 'https://rukminim3.flixcart.com/image/850/1000/xif0q/pendant-locket/y/t/b/na-d-52-1-pyr-fashion-original-imahyyzmphhswkhv.jpeg?q=90')">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product small">
+        <img src="https://rubans.in/cdn/shop/files/gold-plated-cz-stone-studded-with-green-stone-ring-rings-37193442590894.jpg" alt="Ring">
+        <div>
+          <h3>Stone Ring</h3>
+          <p>Shimmer with subtle sparkle.</p>
+          <span><b>₹69,299</b></span><br>
+          <button onclick="addToCart('Stone Ring', '₹69,299', 'https://rubans.in/cdn/shop/files/gold-plated-cz-stone-studded-with-green-stone-ring-rings-37193442590894.jpg')">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tubelight Jewellery. All rights reserved.</p>
+    <div class="contact-info">
+      <p>Email: support@tubelightjewels.in</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Head Office: 101, Shine Plaza, MG Road, Mumbai, India</p>
+      <p>Branches: New Delhi, Bangalore, Chennai</p>
+    </div>
+  </footer>
+
+  <script>
+    function addToCart(name, price, image) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "orders.html";  }
+  </script>
+</body>
+</html>

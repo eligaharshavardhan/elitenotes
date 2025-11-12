@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="Atlanta Federal Reserve President Raphael Bostic said Wednesday he will be leaving his position when his term expires in February." />
+  <meta name="author" content="US Top News and Analysis" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="Atlanta Federal Reserve President Raphael Bostic said Wednesday he will be leaving his position when his term expires in February." />
+  <meta property="og:image" content="{{OG_IMAGE}}" />
+  <link rel="icon" href="/assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000;
+      --panel:#111215;
+      --text:#F7F7F6;
+      --muted:#9A9A9A;
+      --silver:#CFCFCF;
+      --pearl:#E9E9E9;
+      --glass:rgba(255,255,255,0.03);
+      --accent:var(--silver);
+      --maxw:1000px;
+      --pad:20px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; background:linear-gradient(180deg,#020203 0%, #070708 100%); color:var(--text); font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; -webkit-font-smoothing:antialiased;}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:var(--pad)}
+
+    header{display:flex; align-items:center; gap:18px; padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.03)}
+    .logo{font-family:'Playfair Display', serif; font-weight:600; font-size:20px; letter-spacing:0.06em; text-transform:lowercase; color:var(--silver)}
+    .nav{margin-left:auto; display:flex; gap:16px}
+    .nav a{color:var(--muted); text-decoration:none; font-weight:600}
+    .hero{margin-top:28px; display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:start}
+
+    .hero-article h1{font-family:'Playfair Display'; font-size:36px; line-height:1.03; margin:0 0 12px}
+    .byline{color:var(--muted); font-size:13px; margin-bottom:18px}
+    .lede{font-size:18px; color:var(--pearl); margin-bottom:18px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; border:1px solid var(--glass)}
+    .video-placeholder{height:420px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:14px; border-radius:10px; background:linear-gradient(180deg,#0d0d0e,#111214)}
+
+    article{margin-top:22px}
+    h2{font-family:'Playfair Display'; font-size:22px; margin-top:36px; color:var(--silver)}
+    p{color:var(--text); font-size:16px; line-height:1.65}
+    p.lead{font-size:18px; color:var(--pearl)}
+    blockquote{border-left:4px solid var(--silver); padding-left:14px; color:var(--muted); font-style:italic; margin:18px 0}
+
+    .muted{color:var(--muted)}
+    .brief-list{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px}
+    .brief{background:transparent; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); display:flex; gap:12px; align-items:center}
+    .brief img{width:72px; height:72px; object-fit:cover; border-radius:8px; flex-shrink:0}
+    .brief h3{font-family:'Playfair Display'; margin:0 0 8px; font-size:16px}
+    .meta{font-size:13px; color:var(--muted); margin-top:8px}
+
+    .hero-image{
+      width:100%;
+      margin:18px 0;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 12px 34px rgba(0,0,0,0.7);
+    }
+    .hero-image img{width:100%; height:auto; display:block; object-fit:cover}
+
+    .video-thumb{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      background:#111;
+    }
+
+    footer{margin-top:40px; padding:28px 0; border-top:1px solid rgba(255,255,255,0.03); color:var(--muted); font-size:13px}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .video-placeholder{height:320px}
+      .brief-list{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+       <a href="index.html" class="logo" aria-label="Go to elitenotes homepage">elitenotes</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#briefs">briefs</a>
+        <a href="#features">features</a>
+        <a href="#subscribe">subscribe</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-article">
+        <h1>Atlanta Fed President Bostic says he'll leave position when his term expires in February</h1>
+        <div class="byline">By <strong>US Top News and Analysis</strong> — November 12, 2025</div>
+        <p class="lede">{{LEDE}}</p>
+
+        <!-- HERO IMAGE: responsive srcset. -->
+        <div class="hero-image" aria-hidden="false">
+          <img src="{{HERO_IMAGE_SRC}}" srcset="{{HERO_IMAGE_SRCSET}}" sizes="{{HERO_IMAGE_SIZES}}" alt="{{HERO_IMAGE_ALT}}" loading="lazy" />
+        </div>
+
+        <article id="article-body">
+          <p>Atlanta Federal Reserve President Raphael Bostic said Wednesday he will be leaving his position when his term expires in February. Bostic has been in his current role since June 2017 and is the first Black and openly gay regional president.</p>
+
+<p>Highlights:<br/>- His term, which also was marked by issues relating to personal investments he made, runs until Feb.<br/>- The announcement comes ahead of a pivotal year for the Fed and its rate-setting body, the Federal Open Market Committee.<br/>- Regional presidents serve five-year terms that generally run in sync and are designed to expire on years that end in either 1 or 6, which will be the case next year.</p>
+
+<p>Summary:<br/>Atlanta Federal Reserve President Raphael Bostic said Wednesday he will be leaving his position when his term expires in February. Bostic has been in his current role since June 2017 and is the first Black and openly gay regional president. His term, which also was marked by issues relating to personal investments he made, runs until Feb. 28. &quot;I&#x27;m proud of what we accomplished during my tenure to turn the lofty goal of an economy that works for everyone into more of a reality, and I look forward to discovering new ways to advance that bold vision in my next chapter,&quot; Bostic said in a statement. The announcement comes ahead of a pivotal year for the Fed and its rate-setting body, the Federal Open Market Committee. Regional presidents serve five-year terms that generally run in sync and are designed to expire on years that end in either 1 or 6, which will be the case next year. While the local boards vote on the presidents, they are subject to approval by the Fed&#x27;s Board of Governors. Normally a routine process, unusual political dynamics on the board could add a new wrinkle to the procedure. In addition to the reappointments of the regional presidents, <br/>Jerome Powell<br/>&#x27;s term as Fed chair expires in May, though his run as governor goes until 2028. Bostic has been seen as more of a centrist during his run, though he&#x27;s been more cautious about cutting interest rates this year during a time of elevated inflation and a softening labor market. He is not an FOMC voter this year. Atlanta next will get a vote in 2027. Powell said Bostic&#x27;s &quot;perspective has enriched the Federal Open Market Committee&#x27;s understanding of our dynamic economy. And his steady voice has exemplified the best of public service — grounded in analysis, informed by experience, and guided by purpose.&quot;<br/>Until the board names a successor, Cheryl Venable, the first vice president and chief operating officer at the Atlanta Fed, will handle the role of president. Bostic&#x27;s term has not been without controversy. In October 2022, the Fed announced it was looking at trades Bostic made during blackout periods near policy meetings. An internal report showed there were 154 trades made on his behalf during those times. However, the report also indicated there was no evidence Bostic traded on insider information or had personal conflicts. There also were other issues raised regarding financial disclosure terms and an improper level of Treasury holdings. For his part, Bostic expressed regret over the discrepancies and said the trades were executed by third-party managers over whom he did not have control. The controversy was part of a larger issue with investments from Fed officials that triggered tighter internal controls and rules over what types of securities they are permitted to hold.</p>
+
+<p>Why it matters: His term, which also was marked by issues relating to personal investments he made, runs until Feb.</p>
+        </article>
+      </div>
+
+      <aside>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; height:420px; background:#111; border-radius:12px; overflow:hidden;">
+            <img class="video-thumb" src="{{FEATURED_SHORT_IMAGE}}" alt="{{FEATURED_SHORT_ALT}}" loading="lazy" />
+            <div style="position:absolute; left:12px; top:12px; background:rgba(0,0,0,0.5); padding:6px 10px; border-radius:8px; color:var(--silver); font-weight:700; font-size:13px;">{{FEATURED_SHORT_DURATION}} • watch</div>
+          </div>
+          <div style="padding:14px">
+            <div style="font-weight:700; color:var(--silver); margin-bottom:8px">Featured Short</div>
+            <div class="muted">{{FEATURED_SHORT_TITLE}}</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <div style="display:flex; gap:12px; align-items:flex-start">
+            <img src="{{KEY_TAKEAWAYS_IMAGE}}" alt="key" style="width:56px;height:56px;border-radius:8px;object-fit:cover" loading="lazy" />
+            <div>
+              <div style="font-weight:700; color:var(--silver); margin-bottom:10px">Key Takeaways</div>
+              <ul class="muted" style="margin:0; padding-left:18px">
+                {{KEY_TAKEAWAYS_LIST}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="briefs" class="section">
+      <h2 style="margin-top:36px">Short briefs</h2>
+      <div class="brief-list">
+        {{BRIEFS_LIST}}
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+        <div>
+          <div style="font-family:'Playfair Display'; font-weight:600; font-size:16px">elitenotes</div>
+          <div class="muted">Daily intelligence and premium insights</div>
+        </div>
+        <div class="muted">© <span id="yr"></span> elitenotes</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

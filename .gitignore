@@ -1,0 +1,14 @@
+# virtual env
+.venv/
+__pycache__/
+*.pyc
+
+# logs
+logs/
+
+# database
+elitenotes.db
+seen.json
+
+# secrets
+.env

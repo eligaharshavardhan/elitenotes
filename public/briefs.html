@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>elitenotes — briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="All elitenotes briefs." />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #101214;
+      --text: #f4f4f5;
+      --muted: #9ca3af;
+      --border: rgba(255,255,255,0.06);
+      --accent-soft: rgba(250, 204, 21, 0.12);
+      --maxw: 960px;
+      --pad: 20px;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: var(--pad);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0 12px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+    }
+
+    .nav-btn {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.8);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav-btn:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15,23,42,1);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 10px 0 4px;
+    }
+
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .list {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .brief-row {
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      background: rgba(15,23,42,0.75);
+      border: 1px solid rgba(15,23,42,1);
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease, transform 0.16s ease;
+    }
+    .brief-row:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15,23,42,1);
+      transform: translateY(-1px);
+    }
+
+    .brief-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .brief-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="brand">elitenotes</a>
+      <a href="index.html" class="nav-btn">← home</a>
+    </header>
+
+    <main>
+      <h1>All briefs</h1>
+      <p class="muted">Tap a brief to open the full page.</p>
+
+      <div id="briefList" class="list">
+        <p class="muted">Loading briefs…</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const BASE_PATH = window.location.pathname.includes('/elitenotes')
+      ? '/elitenotes'
+      : '';
+
+    function resolveLink(raw) {
+      if (!raw) return '#';
+      if (raw.startsWith('http')) return raw;
+      if (raw.startsWith(BASE_PATH)) return raw;
+      if (raw.startsWith('/')) return BASE_PATH + raw;
+      return BASE_PATH + '/' + raw;
+    }
+
+    async function loadBriefs() {
+      try {
+        const res = await fetch(`${BASE_PATH}/data/home.json`);
+        const container = document.getElementById('briefList');
+
+        if (!res.ok) {
+          container.innerHTML = '<p class="muted">No briefs yet. home.json missing.</p>';
+          return;
+        }
+
+        const data = await res.json();
+        const briefs = Array.isArray(data.briefs) ? data.briefs : [];
+
+        if (!briefs.length) {
+          container.innerHTML = '<p class="muted">No briefs published yet.</p>';
+          return;
+        }
+
+        container.innerHTML = '';
+
+        briefs.forEach(item => {
+          const title = item.title || 'Untitled brief';
+          const date  = item.date_short || item.date_display || item.date || '';
+          const link  = resolveLink(item.link || item.url || '#');
+
+          const row = document.createElement('div');
+          row.className = 'brief-row';
+          row.innerHTML = `
+            <div class="brief-title">${title}</div>
+            <div class="brief-meta">${date}</div>
+          `;
+
+          if (link !== '#') {
+            row.addEventListener('click', () => {
+              window.location.href = link;
+            });
+          }
+
+          container.appendChild(row);
+        });
+      } catch (err) {
+        console.error('Error loading briefs list:', err);
+        document.getElementById('briefList').innerHTML =
+          '<p class="muted">Error loading briefs. Check console.</p>';
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadBriefs);
+    } else {
+      loadBriefs();
+    }
+  </script>
+</body>
+</html>

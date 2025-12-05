@@ -1,0 +1,12 @@
+{
+  "briefs": [
+    {
+      "title": "Test brief: Elitenotes is live",
+      "summary": "This is a test brief from home.json. If you see this on the homepage, everything is wired correctly.",
+      "date": "Dec 5, 2025",
+      "read_time": 3,
+      "url": "/previews/test-brief.html",
+      "source": "elitenotes"
+    }
+  ]
+}

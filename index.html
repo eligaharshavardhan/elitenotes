@@ -6,7 +6,8 @@
   <title>elitenotes — the intelligence of the future</title>
   <meta name="description" content="elitenotes: premium daily briefs and cinematic 49s videos delivering high-signal insights across tech, finance, fashion and culture." />
   <meta name="author" content="elitenotes" />
-  <!-- Open Graph placeholders (replace with real image URL) -->
+
+  <!-- Open Graph -->
   <meta property="og:title" content="elitenotes — the intelligence of the future" />
   <meta property="og:description" content="Daily elite briefs and cinematic 49s videos. Insights for founders, creators and investors." />
   <meta property="og:image" content="/assets/og-image.jpg" />
@@ -153,10 +154,24 @@
 
     /* accessibility focus */
     a:focus, button:focus, input:focus{ outline:3px solid rgba(203,161,53,0.12); outline-offset:4px; border-radius:8px }
+
+    /* screen-reader only */
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
   </style>
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="site" role="banner">
     <div class="wrap" style="display:flex; align-items:center">
       <div class="brand">
@@ -173,6 +188,7 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main>
     <div class="wrap">
       <!-- HERO -->
@@ -193,79 +209,57 @@
         <aside>
           <div class="aside-panel" aria-labelledby="top-insights">
             <h4 id="top-insights">Top Insights Today</h4>
-            <ol>
-              <li>India’s AI chip accelerates hardware independence.</li>
-              <li>Luxury houses trial AI stylists in-store.</li>
-              <li>Creator-investors reshape early-stage flows.</li>
+            <ol id="top-insights-list">
+              <!-- filled by JS -->
+              <li>Loading top insights…</li>
             </ol>
-            <div style="margin-top:10px; font-size:13px" class="muted">Updated: <!-- use JS or backend to update date -->Nov 8, 2025</div>
+            <div id="top-insights-updated"
+                 style="margin-top:10px; font-size:13px"
+                 class="muted">
+              Updated: …
+            </div>
           </div>
         </aside>
       </section>
 
       <!-- DAILY BRIEFS GRID -->
       <section id="briefs" aria-labelledby="briefs-heading" style="margin-top:26px">
-        <h2 id="briefs-heading" style="font-family:'Playfair Display'; margin:0 0 12px">elitenotes briefs — daily</h2>
-        <p class="muted" style="margin:0 0 14px">Short, focused notes — 300–500 words on a single idea. One insight, maximum clarity.</p>
+        <h2 id="briefs-heading" style="font-family:'Playfair Display'; margin:0 0 12px">
+          elitenotes briefs — daily
+        </h2>
+        <p class="muted" style="margin:0 0 14px">
+          Short, focused notes — 300–500 words on a single idea. One insight, maximum clarity.
+        </p>
 
-        <div class="grid">
-          <!-- Card 1 -->
-          <article class="card" role="article" aria-labelledby="c1">
-            <h3 id="c1">India’s AI Chip Will Rewire Global Supply Chains</h3>
-            <p class="muted">Bengaluru startup MindCore unveiled a domestically-made AI processor that promises faster inference and lower cost — a shift in manufacturing strategy worldwide.</p>
-            <div class="meta muted">Nov 8, 2025 · 4 min read</div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card" role="article" aria-labelledby="c2">
-            <h3 id="c2">Luxury Houses Embrace AI Stylists</h3>
-            <p class="muted">From Paris runways to Mumbai boutiques, AI-driven personalization is becoming the hallmark of premium retail experience.</p>
-            <div class="meta muted">Nov 7, 2025 · 3 min read</div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card" role="article" aria-labelledby="c3">
-            <h3 id="c3">Why Creator-Investors Win</h3>
-            <p class="muted">Influencers with capital now invest in product-first startups — creating new flows of attention and capital unmatched by traditional VCs.</p>
-            <div class="meta muted">Nov 6, 2025 · 5 min read</div>
+        <div class="grid" id="briefs-grid">
+          <!-- cards injected by JS -->
+          <article class="card">
+            <h3>Loading briefs…</h3>
+            <p class="muted">The latest daily briefs will appear here.</p>
+            <div class="meta muted">Please wait</div>
           </article>
         </div>
       </section>
 
       <!-- FEATURES -->
- <!-- FEATURES -->
-<section id="features" style="margin-top:36px">
-  <h2 style="font-family:'Playfair Display'; margin-bottom:12px">features — deep analysis</h2>
-  <div class="list">
-
-    <!-- Feature 1 -->
-    <a href="page1.html" class="item" style="text-decoration:none; color:inherit; display:flex; gap:12px; cursor:pointer;">
-      <div class="thumb" aria-hidden="true"
-        style="background-image:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(36,52,71,0.02));
-               width:80px; height:80px; border-radius:8px;">
-      </div>
-      <div>
-        <h3 style="margin:0">The Quiet Revolution: How 10 Mobile Apps Are Rewriting Everyday Life in 2025</h3>
-        <div class="meta">Nov 1, 2025 · 10 min read</div>
-        <p class="muted" style="margin-top:6px">the apps</p>
-      </div>
-    </a>
-
-    <!-- Feature 2 -->
-    <a href="page1.html" class="item" style="text-decoration:none; color:inherit; display:flex; gap:12px; cursor:pointer;">
-      <div class="thumb" aria-hidden="true"
-        style="background-image:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(36,52,71,0.02));
-               width:80px; height:80px; border-radius:8px;">
-      </div>
-      <div>
-        <h3 style="margin:0">Startup Strategy for an AI-First World</h3>
-        <div class="meta">Oct 20, 2025 · 12 min read</div>
-        <p class="muted" style="margin-top:6px">Playbook for founders: product-market fit when models can replace teams.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
+      <section id="features" style="margin-top:36px">
+        <h2 style="font-family:'Playfair Display'; margin-bottom:12px">
+          features — deep analysis
+        </h2>
+        <div class="list" id="features-list">
+          <!-- feature items injected by JS -->
+          <div class="item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div>
+              <h3 style="margin:0">Loading features…</h3>
+              <div class="meta">Please wait</div>
+              <p class="muted" style="margin-top:6px">
+                Long-form analysis will appear here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- VIDEOS -->
       <section id="videos" style="margin-top:34px">
@@ -273,21 +267,35 @@
         <p class="muted">One clean idea, one cinematic minute — the elitenotes signature format.</p>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px">
-          <!-- Replace VIDEO_ID with your YouTube short ID -->
+          <!-- Replace VIDEO_ID with your YouTube Short ID -->
           <div class="video-wrap" aria-hidden="false">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID?rel=0&showinfo=0" title="elitenotes video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe loading="lazy"
+                    src="https://www.youtube.com/embed/VIDEO_ID?rel=0&showinfo=0"
+                    title="elitenotes video 1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
           </div>
+        </div>
       </section>
 
       <!-- NEWSLETTER -->
       <section id="newsletter" style="margin-top:34px">
-        <h2 style="font-family:'Playfair Display'; margin-bottom:8px">subscribe — the elite note</h2>
-        <p class="muted">Try elitenotes free: weekly curated top 7 signals, one paid deep piece, and early invites to community sessions.</p>
+        <h2 style="font-family:'Playfair Display'; margin-bottom:8px">
+          subscribe — the elite note
+        </h2>
+        <p class="muted">
+          Try elitenotes free: weekly curated top 7 signals, one paid deep piece, and early invites to community sessions.
+        </p>
 
         <!-- Replace action with your Substack / Beehiiv subscribe URL later -->
-        <form class="newsletter" action="#" method="post" onsubmit="alert('Subscribed (demo). Replace form action with your newsletter service URL.')">
+        <form class="newsletter" action="#" method="post"
+              onsubmit="alert('Subscribed (demo). Replace form action with your newsletter service URL.'); return false;">
           <label for="email" class="sr-only">Email address</label>
-          <input id="email" name="email" type="email" placeholder="Enter your email" aria-label="Email for elitenotes newsletter" required>
+          <input id="email" name="email" type="email"
+                 placeholder="Enter your email"
+                 aria-label="Email for elitenotes newsletter"
+                 required>
           <button type="submit">start free</button>
         </form>
       </section>
@@ -300,18 +308,181 @@
     <div class="wrap">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap">
         <div>
-          <div style="font-family:'Playfair Display'; font-weight:600; font-size:18px">elitenotes</div>
-          <div class="small muted" style="margin-top:8px">Daily intelligence and premium insights</div>
+          <div style="font-family:'Playfair Display'; font-weight:600; font-size:18px">
+            elitenotes
+          </div>
+          <div class="small muted" style="margin-top:8px">
+            Daily intelligence and premium insights
+          </div>
         </div>
-        <div class="small muted">© <span id="yr"></span> elitenotes · Built with discipline · <a href="#" aria-label="Privacy policy">Privacy</a> · <a href="#" aria-label="Terms of service">Terms</a></div>
+        <div class="small muted">
+          © <span id="yr"></span> elitenotes · Built with discipline ·
+          <a href="#" aria-label="Privacy policy">Privacy</a> ·
+          <a href="#" aria-label="Terms of service">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- REAL-TIME JS -->
   <script>
-    // small niceties
+    // YEAR IN FOOTER
     document.getElementById('yr').textContent = new Date().getFullYear();
-    // progressive enhancement: replace with real subscribe endpoint later
+
+    // Path to JSON generated by backend (relative to /public/)
+    const HOME_DATA_URL = 'data/home.json';
+
+    async function loadHomeData() {
+      try {
+        const res = await fetch(HOME_DATA_URL, { cache: 'no-cache' });
+        if (!res.ok) {
+          console.error('Failed to load home.json', res.status);
+          return;
+        }
+        const data = await res.json();
+        renderTopInsights(data);
+        renderBriefs(data);
+        renderFeatures(data);
+      } catch (err) {
+        console.error('Error loading home.json', err);
+      }
+    }
+
+    function renderTopInsights(data) {
+      const listEl = document.getElementById('top-insights-list');
+      const updatedEl = document.getElementById('top-insights-updated');
+      if (!listEl) return;
+
+      listEl.innerHTML = '';
+
+      (data.top_insights || []).forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        listEl.appendChild(li);
+      });
+
+      if (updatedEl && data.updated_at) {
+        const dt = new Date(data.updated_at);
+        const formatted = dt.toLocaleString(undefined, {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        updatedEl.textContent = 'Updated: ' + formatted;
+      }
+    }
+
+    function renderBriefs(data) {
+      const grid = document.getElementById('briefs-grid');
+      if (!grid || !Array.isArray(data.briefs)) return;
+
+      grid.innerHTML = '';
+
+      data.briefs.forEach((brief, idx) => {
+        const article = document.createElement('article');
+        article.className = 'card';
+        article.setAttribute('role', 'article');
+        const hId = 'brief-' + idx;
+
+        article.innerHTML = `
+          <h3 id="${hId}">${escapeHtml(brief.title || '')}</h3>
+          <p class="muted">${escapeHtml(brief.summary || '')}</p>
+          <div class="meta muted">
+            ${escapeHtml(brief.date || '')}
+            ${brief.read_time ? ' · ' + brief.read_time + ' min read' : ''}
+          </div>
+        `;
+
+        if (brief.url) {
+          article.style.cursor = 'pointer';
+          article.addEventListener('click', () => {
+            window.location.href = brief.url;
+          });
+        }
+
+        grid.appendChild(article);
+      });
+
+      if (data.briefs.length === 0) {
+        grid.innerHTML = `
+          <article class="card">
+            <h3>No briefs yet</h3>
+            <p class="muted">New daily briefs will appear here when your engine runs.</p>
+            <div class="meta muted">Check back soon.</div>
+          </article>
+        `;
+      }
+    }
+
+    function renderFeatures(data) {
+      const list = document.getElementById('features-list');
+      if (!list || !Array.isArray(data.features)) return;
+
+      list.innerHTML = '';
+
+      data.features.forEach((feat) => {
+        const a = document.createElement('a');
+        a.href = feat.url || '#';
+        a.className = 'item';
+        a.style.textDecoration = 'none';
+        a.style.color = 'inherit';
+        a.style.display = 'flex';
+        a.style.gap = '12px';
+        a.style.cursor = 'pointer';
+
+        a.innerHTML = `
+          <div class="thumb" aria-hidden="true"
+               style="background-image:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(36,52,71,0.02));
+                      width:80px; height:80px; border-radius:8px;">
+          </div>
+          <div>
+            <h3 style="margin:0">${escapeHtml(feat.title || '')}</h3>
+            <div class="meta">
+              ${escapeHtml(feat.date || '')}
+              ${feat.read_time ? ' · ' + feat.read_time + ' min read' : ''}
+            </div>
+            <p class="muted" style="margin-top:6px">
+              ${escapeHtml(feat.summary || '')}
+            </p>
+          </div>
+        `;
+
+        list.appendChild(a);
+      });
+
+      if (data.features.length === 0) {
+        list.innerHTML = `
+          <div class="item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div>
+              <h3 style="margin:0">No features yet</h3>
+              <div class="meta">Long-form analysis will appear here once you add feature pages.</div>
+              <p class="muted" style="margin-top:6px">
+                Connect your engine to generate feature pieces or link manually.
+              </p>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // simple HTML escaper
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHomeData();
+      // auto-refresh every 5 minutes to feel “live”
+      setInterval(loadHomeData, 5 * 60 * 1000);
+    });
   </script>
 </body>
 </html>
